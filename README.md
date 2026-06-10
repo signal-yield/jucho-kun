@@ -1,5 +1,8 @@
 # 重調クン (Jucho-kun) — Real Estate Due Diligence Skill for Claude Cowork
 
+> 本リポジトリは、SignalYield管理下の jucho-kun 公式コピーです。  
+> 初期公開版は、過去の告知・プレス等との整合性維持のため https://github.com/pinotan2024-coder/jucho-kun に残しています。
+
 **重調クン** is a Claude Cowork skill that automates the preliminary investigation phase required for preparing Japanese real estate disclosure documents (重要事項説明書 / *Jūyō Jikō Setsumeisho*, Article 35 of the Building Lots and Buildings Transaction Business Act).
 
 What used to take a licensed appraiser or agent **1 hour of desk research** now takes a few minutes.
