@@ -12,10 +12,7 @@
   "plugins": [
     {
       "name": "jucho-kun",
-      "source": {
-        "source": "github",
-        "repo": "signal-yield/jucho-kun"
-      },
+      "source": "./",
       "description": "Automates first-pass investigation for Japanese real-estate disclosure documents (35-Article disclosure under the Building Lots and Buildings Transaction Business Act). Generates checklists, crawls municipal sites, extracts PDF highlights, and outputs xlsx reports.",
       "version": "1.1.0",
       "author": {
