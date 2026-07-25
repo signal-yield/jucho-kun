@@ -13,12 +13,12 @@ What used to take a licensed appraiser or agent **1 hour of desk research** now 
 
 業務での活用・組織導入支援・カスタマイズ開発のご相談は、公式サイトよりお問い合わせください。
 
-**▶ 公式サイト**: https://pinotan2024-coder.github.io/jucho-kun/
+**▶ 公式サイト**: https://signal-yield.github.io/jucho-kun/
 
 **▶ お問い合わせフォーム**: https://forms.gle/YTzkABzQ2xEwmh917
 
 For inquiries about business use, organizational deployment support, or custom development:
-visit our [official website](https://pinotan2024-coder.github.io/jucho-kun/) or fill out the [contact form](https://forms.gle/YTzkABzQ2xEwmh917).
+visit our [official website](https://signal-yield.github.io/jucho-kun/) or fill out the [contact form](https://forms.gle/YTzkABzQ2xEwmh917).
 
 ---
 
