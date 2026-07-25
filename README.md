@@ -27,11 +27,12 @@ visit our [official website](https://pinotan2024-coder.github.io/jucho-kun/) or 
 | Phase | Function | Status |
 |-------|----------|--------|
 | ① | Generate a full investigation checklist from a property address | ✅ |
-| ② | Auto-fetch urban planning data (zoning, FAR, BCR, fire zone) + hazard map data | ✅ |
+| ② | Locate and cite the relevant municipal GIS / hazard portals for the address (zoning, FAR, BCR, fire zone, hazard maps) | ◐ Partial — URLs are located and cited; the skill does not fetch or auto-fill the underlying data |
 | ③ | Extract key facts from PDFs (registry certificates, urban planning maps, etc.) | ✅ |
+| ④ | Soil / groundwater contamination screening (designated areas, sewerage-law and water-pollution-law notified facilities, historical land-use check) | ✅ |
 | ⑤ | Export a structured investigation report as `.xlsx` | ✅ |
 
-> Phase ④ (draft disclosure text) and full online municipal data retrieval are in progress.
+> Not yet implemented: drafting the disclosure document text (重説文案作成), and fully automated retrieval of municipal data (the skill locates and cites the relevant portal URLs, but does not scrape or auto-fill their contents).
 
 ---
 
