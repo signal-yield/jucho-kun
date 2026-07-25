@@ -1,0 +1,42 @@
+name: Link Check
+
+# NOTE: schedule trigger and Issue creation are intentionally disabled until
+# an initial run's output has been reviewed for false positives (municipal /
+# government sites that return 403 to bots rather than a genuinely dead
+# link). Run manually via workflow_dispatch first, check the logs for the
+# 403 vs 404 breakdown, then re-enable both in a follow-up change.
+on:
+  # schedule:
+  #   # Monthly, on the 1st at 00:00 UTC
+  #   - cron: "0 0 1 * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --exclude-mail
+            './**/*.md'
+            './**/*.html'
+          output: ./lychee-report.md
+          fail: false
+
+      - name: Create Issue for broken links
+        if: false # disabled pending initial-run review; see NOTE above
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Broken links found by monthly link check"
+          content-filepath: ./lychee-report.md
+          labels: link-check, automated

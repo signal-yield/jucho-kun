@@ -7,10 +7,14 @@
 <meta name="description" content="不動産売買・取得時の重要事項説明調査(35条書面)の一次スクリーニングを時短する無料ツール「jucho-kun」。不動産鑑定士が開発。宅建業者・AM会社の取得担当者の業務効率化を支援します。">
 <meta name="keywords" content="重要事項説明,重説調査,35条書面,宅建業,不動産鑑定士,J-REIT,デューデリジェンス,AI,自動化">
 
+<link rel="canonical" href="https://signal-yield.github.io/jucho-kun/">
+
 <meta property="og:title" content="jucho-kun | 重要事項説明調査の一次スクリーニング自動化ツール">
 <meta property="og:description" content="不動産鑑定士が開発・GitHub公開の無料ツール。重説調査の一次スクリーニングをAIで時短。">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://signal-yield.github.io/jucho-kun/">
+<!-- TODO: og:image not added — no image asset exists in this repository yet. Add one (recommended 1200x630) and this tag once available. -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -359,6 +363,26 @@ section {
   color: var(--color-ink-soft);
   font-size: 14px;
   line-height: 1.8;
+}
+
+/* ━━━━━━━ INSTALL ━━━━━━━ */
+.install {
+  background: var(--color-bg-paper);
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.install-code {
+  display: block;
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: var(--color-highlight);
+  border: 1px solid var(--color-rule);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-ink);
+  overflow-x: auto;
+  white-space: pre;
 }
 
 /* ━━━━━━━ TARGET ━━━━━━━ */
@@ -882,7 +906,7 @@ footer {
         業務利用について相談する
         <span class="btn-arrow">→</span>
       </a>
-      <a href="https://github.com/pinotan2024-coder/jucho-kun" target="_blank" rel="noopener" class="btn btn-secondary" id="github-link">
+      <a href="https://github.com/signal-yield/jucho-kun" target="_blank" rel="noopener" class="btn btn-secondary" id="github-link">
         GitHubで確認する
         <span class="btn-arrow">↗</span>
       </a>
@@ -966,6 +990,46 @@ footer {
           以降の本調査・社内共有・チーム連携の
           ベース資料として活用いただけます。
         </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ INSTALL ━━━━━━━━━━ -->
+<section class="install">
+  <div class="container">
+    <div class="section-label">Get Started</div>
+    <h2 class="section-title">
+      導入は、<em>3ステップ</em>で<br>
+      完了します。
+    </h2>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3 class="feature-title">Marketplaceを追加</h3>
+        <p class="feature-text">
+          Claude Code / Cowork で本リポジトリを
+          Marketplaceとして追加します。
+        </p>
+        <code class="install-code">/plugin marketplace add signal-yield/jucho-kun</code>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3 class="feature-title">プラグインをインストール</h3>
+        <p class="feature-text">
+          追加したMarketplaceから jucho-kun プラグインを
+          インストールします。
+        </p>
+        <code class="install-code">/plugin install jucho-kun@signal-yield-advisory</code>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3 class="feature-title">日本語で起動</h3>
+        <p class="feature-text">
+          チャットで次のように話しかけるだけで起動します。
+        </p>
+        <code class="install-code">重説調査して</code>
       </div>
     </div>
   </div>
@@ -1124,7 +1188,7 @@ footer {
       </div>
       <div class="footer-links">
         <a href="https://note.com/matsudansyaku/n/nd514040222ef" target="_blank" rel="noopener" id="note-link">note</a>
-        <a href="https://github.com/pinotan2024-coder/jucho-kun" target="_blank" rel="noopener" id="footer-github-link">GitHub</a>
+        <a href="https://github.com/signal-yield/jucho-kun" target="_blank" rel="noopener" id="footer-github-link">GitHub</a>
       </div>
     </div>
   </div>

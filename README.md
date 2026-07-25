@@ -13,12 +13,12 @@ What used to take a licensed appraiser or agent **1 hour of desk research** now 
 
 業務での活用・組織導入支援・カスタマイズ開発のご相談は、公式サイトよりお問い合わせください。
 
-**▶ 公式サイト**: https://pinotan2024-coder.github.io/jucho-kun/
+**▶ 公式サイト**: https://signal-yield.github.io/jucho-kun/
 
 **▶ お問い合わせフォーム**: https://forms.gle/YTzkABzQ2xEwmh917
 
 For inquiries about business use, organizational deployment support, or custom development:
-visit our [official website](https://pinotan2024-coder.github.io/jucho-kun/) or fill out the [contact form](https://forms.gle/YTzkABzQ2xEwmh917).
+visit our [official website](https://signal-yield.github.io/jucho-kun/) or fill out the [contact form](https://forms.gle/YTzkABzQ2xEwmh917).
 
 ---
 
@@ -27,11 +27,12 @@ visit our [official website](https://pinotan2024-coder.github.io/jucho-kun/) or 
 | Phase | Function | Status |
 |-------|----------|--------|
 | ① | Generate a full investigation checklist from a property address | ✅ |
-| ② | Auto-fetch urban planning data (zoning, FAR, BCR, fire zone) + hazard map data | ✅ |
+| ② | Locate and cite the relevant municipal GIS / hazard portals for the address (zoning, FAR, BCR, fire zone, hazard maps) | ◐ Partial — URLs are located and cited; the skill does not fetch or auto-fill the underlying data |
 | ③ | Extract key facts from PDFs (registry certificates, urban planning maps, etc.) | ✅ |
+| ④ | Soil / groundwater contamination screening (designated areas, sewerage-law and water-pollution-law notified facilities, historical land-use check) | ✅ |
 | ⑤ | Export a structured investigation report as `.xlsx` | ✅ |
 
-> Phase ④ (draft disclosure text) and full online municipal data retrieval are in progress.
+> Not yet implemented: drafting the disclosure document text (重説文案作成), and fully automated retrieval of municipal data (the skill locates and cites the relevant portal URLs, but does not scrape or auto-fill their contents).
 
 ---
 
@@ -45,10 +46,20 @@ visit our [official website](https://pinotan2024-coder.github.io/jucho-kun/) or 
 
 ## How to Install
 
-1. Download `jucho-kun.skill` from [Releases](../../releases)
-2. Open **Claude Cowork**
-3. Drag and drop the `.skill` file into the chat, or click **Save Skill**
-4. The skill is now available in your project
+jucho-kun is distributed as a Claude Code Plugin via a repo-hosted Marketplace.
+
+1. Add this repository as a Claude Code Marketplace:
+   ```
+   /plugin marketplace add signal-yield/jucho-kun
+   ```
+2. Install the plugin:
+   ```
+   /plugin install jucho-kun@signal-yield-advisory
+   ```
+3. Type in Japanese to trigger the skill:
+   ```
+   重説調査して
+   ```
 
 ---
 
@@ -77,7 +88,7 @@ For **京都府京都市東山区祇園町南側575**（売買・事業用）:
 - **Urban Planning** (from Kyoto City GIS): 商業地域, 建ぺい率80%, 容積率400%, 防火地域, 高さ最高20m地区
 - **Flood Hazard** (from 国土地理院): 洪水浸水想定区域あり（浸水深0.5〜3.0m）
 - **Landslide**: Outside designated hazard zone (hillside area nearby has yellow/red zones)
-- **Tsunami / Storm Surge**: No risk (inland, elevation ≈40.7m)
+- **Tsunami / Storm Surge**: Outside designated hazard zone (inland, elevation ≈40.7m)
 - Plus a 30-item checklist with direct links to relevant government map services
 
 ---
