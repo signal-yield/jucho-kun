@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "Real-estate focused Claude Skills by Signal Yield Advisory — Japanese licensed real estate appraiser's AI toolkit.",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
@@ -17,7 +17,7 @@
         "repo": "signal-yield/jucho-kun"
       },
       "description": "Automates first-pass investigation for Japanese real-estate disclosure documents (35-Article disclosure under the Building Lots and Buildings Transaction Business Act). Generates checklists, crawls municipal sites, extracts PDF highlights, and outputs xlsx reports.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": {
         "name": "Koichi Matsuda (Licensed Real Estate Appraiser, Japan, 2002-)",
         "email": "signalYield@gmail.com"

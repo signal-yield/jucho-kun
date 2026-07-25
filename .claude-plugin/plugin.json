@@ -1,7 +1,7 @@
 {
   "name": "jucho-kun",
   "description": "Automates first-pass investigation for Japanese real-estate disclosure documents (Article 35 of the Building Lots and Buildings Transaction Business Act). Generates checklists, crawls municipal sites, extracts PDF highlights, and outputs xlsx reports.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Koichi Matsuda",
     "email": "signalYield@gmail.com",
