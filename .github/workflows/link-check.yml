@@ -27,7 +27,6 @@ jobs:
         with:
           args: >-
             --no-progress
-            --exclude-mail
             './**/*.md'
             './**/*.html'
           output: ./lychee-report.md
