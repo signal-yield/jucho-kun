@@ -88,7 +88,7 @@ For **京都府京都市東山区祇園町南側575**（売買・事業用）:
 - **Urban Planning** (from Kyoto City GIS): 商業地域, 建ぺい率80%, 容積率400%, 防火地域, 高さ最高20m地区
 - **Flood Hazard** (from 国土地理院): 洪水浸水想定区域あり（浸水深0.5〜3.0m）
 - **Landslide**: Outside designated hazard zone (hillside area nearby has yellow/red zones)
-- **Tsunami / Storm Surge**: No risk (inland, elevation ≈40.7m)
+- **Tsunami / Storm Surge**: Outside designated hazard zone (inland, elevation ≈40.7m)
 - Plus a 30-item checklist with direct links to relevant government map services
 
 ---
