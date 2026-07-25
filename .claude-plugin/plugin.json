@@ -4,11 +4,11 @@
   "version": "1.0.0",
   "author": {
     "name": "Koichi Matsuda",
-    "email": "pinotan2024@gmail.com",
-    "url": "https://github.com/pinotan2024-coder"
+    "email": "signalYield@gmail.com",
+    "url": "https://github.com/signal-yield"
   },
   "license": "MIT",
-  "homepage": "https://github.com/pinotan2024-coder/jucho-kun",
-  "repository": "https://github.com/pinotan2024-coder/jucho-kun",
+  "homepage": "https://github.com/signal-yield/jucho-kun",
+  "repository": "https://github.com/signal-yield/jucho-kun",
   "keywords": ["real-estate", "japan", "disclosure", "due-diligence", "takkengyoho", "jusetsu", "appraisal"]
 }
