@@ -361,6 +361,26 @@ section {
   line-height: 1.8;
 }
 
+/* ━━━━━━━ INSTALL ━━━━━━━ */
+.install {
+  background: var(--color-bg-paper);
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.install-code {
+  display: block;
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: var(--color-highlight);
+  border: 1px solid var(--color-rule);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-ink);
+  overflow-x: auto;
+  white-space: pre;
+}
+
 /* ━━━━━━━ TARGET ━━━━━━━ */
 .target {
   background: var(--color-ink);
@@ -966,6 +986,46 @@ footer {
           以降の本調査・社内共有・チーム連携の
           ベース資料として活用いただけます。
         </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ INSTALL ━━━━━━━━━━ -->
+<section class="install">
+  <div class="container">
+    <div class="section-label">Get Started</div>
+    <h2 class="section-title">
+      導入は、<em>3ステップ</em>で<br>
+      完了します。
+    </h2>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3 class="feature-title">Marketplaceを追加</h3>
+        <p class="feature-text">
+          Claude Code / Cowork で本リポジトリを
+          Marketplaceとして追加します。
+        </p>
+        <code class="install-code">/plugin marketplace add signal-yield/jucho-kun</code>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3 class="feature-title">プラグインをインストール</h3>
+        <p class="feature-text">
+          追加したMarketplaceから jucho-kun プラグインを
+          インストールします。
+        </p>
+        <code class="install-code">/plugin install jucho-kun@signal-yield-advisory</code>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3 class="feature-title">日本語で起動</h3>
+        <p class="feature-text">
+          チャットで次のように話しかけるだけで起動します。
+        </p>
+        <code class="install-code">重説調査して</code>
       </div>
     </div>
   </div>

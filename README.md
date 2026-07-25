@@ -45,10 +45,20 @@ visit our [official website](https://pinotan2024-coder.github.io/jucho-kun/) or 
 
 ## How to Install
 
-1. Download `jucho-kun.skill` from [Releases](../../releases)
-2. Open **Claude Cowork**
-3. Drag and drop the `.skill` file into the chat, or click **Save Skill**
-4. The skill is now available in your project
+jucho-kun is distributed as a Claude Code Plugin via a repo-hosted Marketplace.
+
+1. Add this repository as a Claude Code Marketplace:
+   ```
+   /plugin marketplace add signal-yield/jucho-kun
+   ```
+2. Install the plugin:
+   ```
+   /plugin install jucho-kun@signal-yield-advisory
+   ```
+3. Type in Japanese to trigger the skill:
+   ```
+   重説調査して
+   ```
 
 ---
 
