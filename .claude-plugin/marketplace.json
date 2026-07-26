@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "Real-estate focused Claude Skills by Signal Yield Advisory — Japanese licensed real estate appraiser's AI toolkit.",
-    "version": "1.1.0"
+    "version": "1.0.0"
   },
   "plugins": [
     {
