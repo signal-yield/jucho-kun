@@ -40,18 +40,33 @@ All notable changes to jucho-kun are documented in this file.
 - **Overclaiming**: README's example output no longer states "No risk" for tsunami/storm
   surge, which contradicted the disclaimer that this is a first-pass screening tool;
   changed to "Outside designated hazard zone".
+- **Install failure with no SSH configured**: `claude plugin install jucho-kun@signal-yield-advisory`
+  failed with a strict SSH host-key verification error
+  (`No ED25519 host key is known for github.com`) on any machine without SSH keys /
+  `known_hosts` configured for GitHub. Root cause: `marketplace.json`'s
+  `plugins[0].source` used the object/GitHub-repo format
+  (`{"source": "github", "repo": "..."}`), which `claude plugin install` resolves via
+  an SSH clone attempt with no HTTPS fallback (unlike `claude plugin marketplace add`,
+  which does fall back to HTTPS). Since the marketplace and its only plugin are the
+  same repository, changed `plugins[0].source` to `"./"` instead, which reuses the
+  marketplace's already-HTTPS-cloned checkout. Verified end-to-end in a clean,
+  SSH-less environment after the fix.
 
 ### Added
 
 - `canonical` and `og:url` tags in `docs/index.html`. `og:image` intentionally not added —
   no image asset exists in this repository yet.
 - `.github/workflows/link-check.yml`: monthly link check across `.md`/`.html` files,
-  opening a GitHub Issue when broken links are found.
+  opening a GitHub Issue when broken links are found (currently landed with the
+  schedule trigger and Issue-creation step disabled pending review of an initial run).
+
+### Changed
+
+- Enabled GitHub Pages (`main` / `docs`) for `signal-yield/jucho-kun`
+  (`https://signal-yield.github.io/jucho-kun/`) and migrated README's official-site
+  links there from the retired repo's Pages site.
 
 ### Notes
 
-- README's official-site URL (`pinotan2024-coder.github.io`) was intentionally left
-  unchanged pending confirmation that GitHub Pages is enabled for
-  `signal-yield/jucho-kun`.
 - No changes were made to `pinotan2024-coder/jucho-kun` (the original repo, kept for
   press/announcement consistency) or to any local out-of-repo skill installation.
