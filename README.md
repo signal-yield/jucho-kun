@@ -58,7 +58,7 @@ Verified: installation succeeds with no SSH setup required — no SSH key and no
    ```
 2. Install the plugin:
    ```
-   /plugin install jucho-kun@signal-yield-advisory
+   /plugin install jucho-kun@jucho-kun
    ```
 3. Type in Japanese to trigger the skill:
    ```
@@ -69,7 +69,7 @@ Verified: installation succeeds with no SSH setup required — no SSH key and no
 
 ```bash
 claude plugin marketplace add signal-yield/jucho-kun
-claude plugin install jucho-kun@signal-yield-advisory
+claude plugin install jucho-kun@jucho-kun
 ```
 
 ---

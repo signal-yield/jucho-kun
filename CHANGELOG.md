@@ -2,6 +2,19 @@
 
 All notable changes to jucho-kun are documented in this file.
 
+## [Unreleased]
+
+### Changed
+
+- Renamed the Claude Code Marketplace from `signal-yield-advisory` to `jucho-kun`,
+  matching the repository/plugin name so the install target is the simpler,
+  self-explanatory `jucho-kun@jucho-kun`. Done ahead of publishing install
+  instructions in outward-facing material, since a rename after publication would
+  require a correction. `signal-yield-advisory` is intentionally not reused — it is
+  reserved for a possible future org-wide catalog spanning the whole くんシリーズ,
+  once plugin install gets a working HTTPS fallback for GitHub-repo sources
+  upstream.
+
 ## [1.1.0] - 2026-07-25
 
 ### Fixed
