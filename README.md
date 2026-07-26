@@ -48,6 +48,10 @@ visit our [official website](https://signal-yield.github.io/jucho-kun/) or fill 
 
 jucho-kun is distributed as a Claude Code Plugin via a repo-hosted Marketplace.
 
+Verified: installation succeeds with no SSH setup required — no SSH key and no `known_hosts` entry for github.com are needed. No extra prerequisites beyond a working Claude Code CLI.
+
+**Inside an interactive Claude Code / Cowork session**, using slash commands:
+
 1. Add this repository as a Claude Code Marketplace:
    ```
    /plugin marketplace add signal-yield/jucho-kun
@@ -60,6 +64,13 @@ jucho-kun is distributed as a Claude Code Plugin via a repo-hosted Marketplace.
    ```
    重説調査して
    ```
+
+**From a terminal**, using the non-interactive CLI (equivalent to steps 1–2 above):
+
+```bash
+claude plugin marketplace add signal-yield/jucho-kun
+claude plugin install jucho-kun@signal-yield-advisory
+```
 
 ---
 

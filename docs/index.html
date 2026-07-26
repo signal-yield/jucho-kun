@@ -385,6 +385,18 @@ section {
   white-space: pre;
 }
 
+.install-code + .install-code {
+  margin-top: 8px;
+}
+
+.install-note {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-ink-soft);
+  margin-bottom: 8px;
+  max-width: 640px;
+}
+
 /* ━━━━━━━ TARGET ━━━━━━━ */
 .target {
   background: var(--color-ink);
@@ -1004,6 +1016,11 @@ footer {
       完了します。
     </h2>
 
+    <p class="install-note">
+      SSHキーやknown_hostsの事前設定は不要であることを実機検証済みです。
+      Claude Code CLIが動く環境であれば、追加の準備なしに導入できます。
+    </p>
+
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-num">01</div>
@@ -1013,6 +1030,7 @@ footer {
           Marketplaceとして追加します。
         </p>
         <code class="install-code">/plugin marketplace add signal-yield/jucho-kun</code>
+        <code class="install-code">claude plugin marketplace add signal-yield/jucho-kun</code>
       </div>
       <div class="feature-card">
         <div class="feature-num">02</div>
@@ -1022,6 +1040,7 @@ footer {
           インストールします。
         </p>
         <code class="install-code">/plugin install jucho-kun@signal-yield-advisory</code>
+        <code class="install-code">claude plugin install jucho-kun@signal-yield-advisory</code>
       </div>
       <div class="feature-card">
         <div class="feature-num">03</div>
