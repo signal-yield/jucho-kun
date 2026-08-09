@@ -1,11 +1,11 @@
-# 重調クン (Jucho-kun) — Real Estate Due Diligence Skill for Claude Cowork
+# 重調クン (Jucho-kun) — Real Estate Due Diligence Plugin for ChatGPT, Codex, and Claude
 
 > 本リポジトリは、SignalYield管理下の jucho-kun 公式コピーです。  
 > 初期公開版は、過去の告知・プレス等との整合性維持のため https://github.com/pinotan2024-coder/jucho-kun に残しています。
 
-**重調クン** is a Claude Cowork skill that automates the preliminary investigation phase required for preparing Japanese real estate disclosure documents (重要事項説明書 / *Jūyō Jikō Setsumeisho*, Article 35 of the Building Lots and Buildings Transaction Business Act).
+**重調クン** is a skills-only plugin for ChatGPT, Codex, and Claude that supports the preliminary investigation phase required for preparing Japanese real estate disclosure documents (重要事項説明書 / *Jūyō Jikō Setsumeisho*, Article 35 of the Building Lots and Buildings Transaction Business Act).
 
-What used to take a licensed appraiser or agent **1 hour of desk research** now takes a few minutes.
+It shortens the time needed to organize investigation sources and create first-pass checklists, while keeping final confirmation with the original sources, field checks, public offices, and licensed professionals.
 
 ---
 
@@ -27,12 +27,12 @@ visit our [official website](https://signal-yield.github.io/jucho-kun/) or fill 
 | Phase | Function | Status |
 |-------|----------|--------|
 | ① | Generate a full investigation checklist from a property address | ✅ |
-| ② | Locate and cite the relevant municipal GIS / hazard portals for the address (zoning, FAR, BCR, fire zone, hazard maps) | ◐ Partial — URLs are located and cited; the skill does not fetch or auto-fill the underlying data |
+| ② | Locate and cite relevant municipal GIS / hazard portals and other public sources for the address | ◐ Partial — URLs and source candidates are organized; target-level findings are marked confirmed only when verified from original public sources |
 | ③ | Extract key facts from PDFs (registry certificates, urban planning maps, etc.) | ✅ |
 | ④ | Soil / groundwater contamination screening (designated areas, sewerage-law and water-pollution-law notified facilities, historical land-use check) | ✅ |
 | ⑤ | Export a structured investigation report as `.xlsx` | ✅ |
 
-> Not yet implemented: drafting the disclosure document text (重説文案作成), and fully automated retrieval of municipal data (the skill locates and cites the relevant portal URLs, but does not scrape or auto-fill their contents).
+> Not yet implemented: drafting the disclosure document text (重説文案作成), field/public-office investigation, and full automated retrieval of municipal data. The skill organizes source URLs and investigation candidates, but does not replace original-source review.
 
 ---
 
@@ -45,6 +45,20 @@ visit our [official website](https://signal-yield.github.io/jucho-kun/) or fill 
 ---
 
 ## How to Install
+
+### ChatGPT / Codex
+
+The public-directory submission is being prepared. For repo-hosted Codex testing:
+
+```bash
+codex plugin marketplace add signal-yield/jucho-kun
+```
+
+Then open `/plugins`, select the `signal-yield` marketplace, and install `jucho-kun`. Start a new conversation after installation.
+
+The same skills-only package is prepared under `plugins/jucho-kun/` for the universal Plugins Directory shared by ChatGPT and Codex.
+
+### Claude Code / Cowork
 
 jucho-kun is distributed as a Claude Code Plugin via a repo-hosted Marketplace.
 
@@ -88,7 +102,7 @@ The skill will ask you for:
 3. Use type: 居住用 (residential) or 事業用 (commercial)
 4. Whether the property is a 区分所有建物 (condominium unit)
 
-Then it generates a checklist, fetches publicly available data, and outputs an Excel report.
+Then it generates a checklist, organizes publicly available source candidates, and outputs an Excel report when the environment supports file generation. If Excel generation is unavailable, use the same 8-column structure as a Markdown table or CSV-ready data.
 
 ---
 
