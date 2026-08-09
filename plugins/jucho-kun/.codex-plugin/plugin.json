@@ -1,0 +1,44 @@
+{
+  "name": "jucho-kun",
+  "version": "1.1.0",
+  "description": "A skills-only plugin for first-pass research supporting Japanese real-estate disclosure documents.",
+  "author": {
+    "name": "Signal Yield Advisory / Koichi Matsuda",
+    "email": "signalYield@gmail.com",
+    "url": "https://signal-yield.github.io/jucho-kun/"
+  },
+  "homepage": "https://signal-yield.github.io/jucho-kun/",
+  "repository": "https://github.com/signal-yield/jucho-kun",
+  "license": "MIT",
+  "keywords": [
+    "real-estate",
+    "japan",
+    "due-diligence",
+    "disclosure",
+    "article-35",
+    "checklist"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "重調クン — 重説調査支援",
+    "shortDescription": "重説作成前の一次調査を支援",
+    "longDescription": "重調クンは、日本の不動産取引における重要事項説明書の作成前調査を支援する、MITライセンスのスキル専用プラグインです。物件条件に応じた調査チェックリストを作成し、公開情報の参照先整理、ユーザーが提供したPDFの要点抽出、未確認事項を明示したExcel調査報告書の作成を支援します。重要事項説明書そのものの作成、自治体サイトからの完全自動取得、現地・役所調査、法的判断、宅地建物取引士による説明や最終確認を代替しません。",
+    "developerName": "Signal Yield Advisory / Koichi Matsuda",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://signal-yield.github.io/jucho-kun/",
+    "privacyPolicyURL": "https://signal-yield.github.io/jucho-kun/privacy.html",
+    "termsOfServiceURL": "https://signal-yield.github.io/jucho-kun/terms.html",
+    "defaultPrompt": [
+      "重調クンを起動して",
+      "この物件の重説調査チェックリストを作って",
+      "添付した登記簿PDFの要点を整理して"
+    ],
+    "brandColor": "#17324D",
+    "composerIcon": "./assets/jucho-kun-icon.png",
+    "logo": "./assets/jucho-kun-logo.png"
+  }
+}
