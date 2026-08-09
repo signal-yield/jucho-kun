@@ -13,7 +13,7 @@
     {
       "name": "jucho-kun",
       "source": "./",
-      "description": "Automates first-pass investigation for Japanese real-estate disclosure documents (35-Article disclosure under the Building Lots and Buildings Transaction Business Act). Generates checklists, crawls municipal sites, extracts PDF highlights, and outputs xlsx reports.",
+      "description": "Supports first-pass investigation for Japanese real-estate disclosure documents (35-Article disclosure under the Building Lots and Buildings Transaction Business Act). Organizes checklists, public source references, PDF highlights, and xlsx-style reports when supported by the user environment.",
       "version": "1.1.0",
       "author": {
         "name": "Koichi Matsuda (Licensed Real Estate Appraiser, Japan, 2002-)",
