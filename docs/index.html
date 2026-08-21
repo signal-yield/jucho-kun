@@ -14,8 +14,9 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://signal-yield.github.io/jucho-kun/">
-<!-- TODO: docs/assets/ogp.png (1200x630) has not been placed in the repo yet. Tag is wired up ahead of the asset. -->
-<meta property="og:image" content="https://signal-yield.github.io/jucho-kun/assets/ogp.png">
+<meta property="og:image" content="https://signal-yield.github.io/jucho-kun/assets/jucho-kun-hero.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="assets/jucho-kun-hero.webp" type="image/webp">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -160,6 +161,30 @@ header {
   font-style: italic;
   color: var(--color-accent);
   font-weight: 500;
+}
+
+.hero-visual {
+  margin: 0 0 48px;
+  padding: 10px;
+  background: var(--color-bg-paper);
+  border: 1px solid var(--color-rule);
+  box-shadow: 0 24px 60px rgba(26, 26, 26, 0.08);
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-visual figcaption {
+  padding: 10px 4px 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--color-ink-muted);
+  text-align: right;
+  text-transform: uppercase;
 }
 
 .hero-meta {
@@ -864,8 +889,9 @@ footer {
 .hero-eyebrow { animation-delay: 0.1s; }
 .hero-title { animation-delay: 0.2s; }
 .hero-subtitle { animation-delay: 0.4s; }
-.hero-meta { animation-delay: 0.6s; }
-.hero-cta { animation-delay: 0.8s; }
+.hero-visual { animation-delay: 0.55s; }
+.hero-meta { animation-delay: 0.7s; }
+.hero-cta { animation-delay: 0.9s; }
 </style>
 </head>
 <body>
@@ -898,6 +924,17 @@ footer {
       重要事項説明調査の<em>一次スクリーニング</em>を時短する、
       不動産鑑定士が開発したオープンソースツールです。
     </p>
+
+    <figure class="hero-visual">
+      <img
+        src="assets/jucho-kun-hero.webp"
+        alt="jucho-kunの利用イメージ。物件情報の入力からAIによる一次調査、Excel調査報告書の出力までの流れ"
+        width="600"
+        height="400"
+        loading="eager"
+        fetchpriority="high">
+      <figcaption>物件情報 → AI一次調査 → 調査報告書.xlsx</figcaption>
+    </figure>
 
     <div class="hero-meta">
       <div class="hero-meta-item">
