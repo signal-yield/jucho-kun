@@ -1,0 +1,141 @@
+name: Publish hero image
+
+on:
+  push:
+    branches:
+      - feat/hero-image
+    paths:
+      - .github/workflows/publish-hero-image.yml
+      - docs/assets/jucho-kun-hero.webp
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/hero-image
+          fetch-depth: 0
+
+      - name: Patch landing page
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path("docs/index.html")
+          s = path.read_text(encoding="utf-8")
+
+          old_og = '''<!-- TODO: docs/assets/ogp.png (1200x630) has not been placed in the repo yet. Tag is wired up ahead of the asset. -->
+          <meta property="og:image" content="https://signal-yield.github.io/jucho-kun/assets/ogp.png">'''
+          new_og = '''<meta property="og:image" content="https://signal-yield.github.io/jucho-kun/assets/jucho-kun-hero.webp">
+          <meta name="twitter:card" content="summary_large_image">
+          <link rel="preload" as="image" href="assets/jucho-kun-hero.webp" type="image/webp">'''
+          if old_og in s:
+              s = s.replace(old_og, new_og, 1)
+          elif 'assets/jucho-kun-hero.webp' not in s:
+              raise SystemExit("OG image anchor not found")
+
+          css_anchor = '''.hero-subtitle em {
+            font-style: italic;
+            color: var(--color-accent);
+            font-weight: 500;
+          }
+          '''
+          css = '''
+          .hero-visual {
+            margin: 0 0 48px;
+            padding: 10px;
+            background: var(--color-bg-paper);
+            border: 1px solid var(--color-rule);
+            box-shadow: 0 24px 60px rgba(26, 26, 26, 0.08);
+          }
+
+          .hero-visual img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+
+          .hero-visual figcaption {
+            padding: 10px 4px 0;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            color: var(--color-ink-muted);
+            text-align: right;
+            text-transform: uppercase;
+          }
+          '''
+          if '.hero-visual {' not in s:
+              if css_anchor not in s:
+                  raise SystemExit("Hero CSS anchor not found")
+              s = s.replace(css_anchor, css_anchor + css, 1)
+
+          mobile_anchor = '''  .hero {
+            padding: 60px 0 60px;
+          }
+          '''
+          mobile_css = '''
+            .hero-visual {
+              margin-bottom: 36px;
+              padding: 6px;
+            }
+
+            .hero-visual figcaption {
+              display: none;
+            }
+          '''
+          if 'margin-bottom: 36px;' not in s:
+              if mobile_anchor not in s:
+                  raise SystemExit("Responsive anchor not found")
+              s = s.replace(mobile_anchor, mobile_anchor + mobile_css, 1)
+
+          html_anchor = '''    </p>
+
+              <div class="hero-meta">'''.replace('      <div', '    <div')
+          hero_markup = '''    </p>
+
+              <figure class="hero-visual">
+                <img
+                  src="assets/jucho-kun-hero.webp"
+                  alt="jucho-kunの利用イメージ。物件情報の入力からAIによる一次調査、Excel調査報告書の出力までの流れ"
+                  width="600"
+                  height="400"
+                  loading="eager"
+                  fetchpriority="high">
+                <figcaption>物件情報 → AI一次調査 → 調査報告書.xlsx</figcaption>
+              </figure>
+
+              <div class="hero-meta">'''.replace('      <figure', '    <figure').replace('        <img', '      <img').replace('          src', '        src').replace('          alt', '        alt').replace('          width', '        width').replace('          height', '        height').replace('          loading', '        loading').replace('          fetchpriority', '        fetchpriority').replace('        <figcaption', '      <figcaption').replace('      </figure>', '    </figure>').replace('      <div class="hero-meta">', '    <div class="hero-meta">')
+          if '<figure class="hero-visual">' not in s:
+              if html_anchor not in s:
+                  raise SystemExit("Hero markup anchor not found")
+              s = s.replace(html_anchor, hero_markup, 1)
+
+          old_delays = '''.hero-subtitle { animation-delay: 0.4s; }
+          .hero-meta { animation-delay: 0.6s; }
+          .hero-cta { animation-delay: 0.8s; }'''
+          new_delays = '''.hero-subtitle { animation-delay: 0.4s; }
+          .hero-visual { animation-delay: 0.55s; }
+          .hero-meta { animation-delay: 0.7s; }
+          .hero-cta { animation-delay: 0.9s; }'''
+          if '.hero-visual { animation-delay:' not in s:
+              if old_delays not in s:
+                  raise SystemExit("Animation anchor not found")
+              s = s.replace(old_delays, new_delays, 1)
+
+          path.write_text(s, encoding="utf-8")
+
+      - name: Commit landing page
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- docs/index.html
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Add hero visual to landing page"
+          git push origin HEAD:feat/hero-image
