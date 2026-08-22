@@ -303,6 +303,46 @@ section {
   color: var(--color-accent);
 }
 
+/* ━━━━━━━ DEMO ━━━━━━━ */
+.demo {
+  border-top: 1px solid var(--color-rule);
+}
+
+.demo-frame {
+  margin: 0;
+  padding: 10px;
+  max-width: 880px;
+  background: var(--color-bg-paper);
+  border: 1px solid var(--color-rule);
+  box-shadow: 0 24px 60px rgba(26, 26, 26, 0.08);
+}
+
+.demo-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-ink);
+}
+
+.demo-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.demo-frame figcaption {
+  padding: 10px 4px 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--color-ink-muted);
+  text-align: right;
+  text-transform: uppercase;
+}
+
 /* ━━━━━━━ PROBLEM ━━━━━━━ */
 .problem {
   background: var(--color-bg-paper);
@@ -359,6 +399,7 @@ section {
   padding: 48px 32px;
   border: 1px solid var(--color-rule);
   position: relative;
+  min-width: 0;
   transition: all 0.3s ease;
 }
 
@@ -407,20 +448,12 @@ section {
   font-family: var(--font-mono);
   font-size: 13px;
   color: var(--color-ink);
-  overflow-x: auto;
-  white-space: pre;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .install-code + .install-code {
   margin-top: 8px;
-}
-
-.install-note {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--color-ink-soft);
-  margin-bottom: 8px;
-  max-width: 640px;
 }
 
 /* ━━━━━━━ TARGET ━━━━━━━ */
@@ -964,6 +997,28 @@ footer {
   </div>
 </section>
 
+<!-- ━━━━━━━━━━ DEMO ━━━━━━━━━━ -->
+<section class="demo">
+  <div class="container">
+    <div class="section-label">Demo</div>
+    <h2 class="section-title">
+      実際の動きを、<em>動画</em>で。
+    </h2>
+    <figure class="demo-frame">
+      <div class="demo-embed">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/u7bA0GCGotg?rel=0"
+          title="重調クン：不動産調査におけるAIの活用"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <figcaption>重調クン：不動産調査におけるAIの活用</figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- ━━━━━━━━━━ PROBLEM ━━━━━━━━━━ -->
 <section class="problem">
   <div class="container">
@@ -1053,11 +1108,6 @@ footer {
       導入は、<em>3ステップ</em>で<br>
       完了します。
     </h2>
-
-    <p class="install-note">
-      SSHキーやknown_hostsの事前設定は不要であることを実機検証済みです。
-      Claude Code CLIが動く環境であれば、追加の準備なしに導入できます。
-    </p>
 
     <div class="features-grid">
       <div class="feature-card">
